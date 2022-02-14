@@ -1,6 +1,6 @@
 import { range, List, len } from './index.js'
 
-for (let i in range(4))
+for (let i of range(4))
     console.log("Index", i)
 /*
  * Prints :
