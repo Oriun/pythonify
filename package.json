@@ -1,6 +1,6 @@
 {
   "name": "@oriun/pythonify",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -17,5 +17,6 @@
   "bugs": {
     "url": "https://github.com/Oriun/pythonify/issues"
   },
-  "homepage": "https://github.com/Oriun/pythonify#readme"
+  "homepage": "https://github.com/Oriun/pythonify#readme",
+  "dependencies": {}
 }
