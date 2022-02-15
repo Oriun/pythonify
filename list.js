@@ -1,6 +1,6 @@
-const isIndex = function(prop){
-    if(Number.isInteger(prop)) return true
-    if(typeof prop === 'string') return /^-?\d+$/.test(prop)
+const isIndex = function (prop) {
+    if (Number.isInteger(prop)) return true
+    if (typeof prop === 'string') return /^-?\d+$/.test(prop)
     return false
 }
 const listProxyHandler = {
@@ -16,6 +16,18 @@ const listProxyHandler = {
         else if (prop in list) return false
         else list._customSetter(prop)
         return true
+    },
+    has: function (list, prop) {
+        if (list._array.includes(prop)) return true
+        else if(typeof prop === 'symbol') return false
+        let toNumber = parseFloat(prop)
+        if (!Number.isNaN(toNumber)) return list._array.includes(toNumber)
+        else if (prop === 'true') return list._array.includes(true)
+        else if (prop === 'false') return list._array.includes(false)
+        else if (prop === 'undefined') return list._array.includes(undefined)
+        else if (prop === 'null') return list._array.includes(null)
+        else if (prop === 'NaN') return list._array.includes(NaN)
+        throw new Error('Can\'t use in operator on list with non-primitive type')
     }
 }
 
@@ -73,7 +85,7 @@ class ListClass {
     }
     _customGetter(prop) {
         const [isSimplePattern, first, second] = /^(?<first>-?\d+)?:(?<second>-?\d+)?$/.exec(prop) ?? []
-        if(isSimplePattern){
+        if (isSimplePattern) {
             return List(this._array.slice(first, second))
         }
         // else more to do here

@@ -2,7 +2,7 @@
 
 # Pythonify
 
-Some Pythonsyntax in JS
+Some Python syntax in JS
 
 ```javascript
 import { range, List, len } from './len.js'
@@ -33,6 +33,9 @@ list.insert(len(list),3)    // [1,2,3]
 list.append(3)              // [1,2,3,3]
 list.count(3)               // 2
 list.remove(3)              // [1,2,3]
+
+5 in list       // false
+3 in list       // true
 
 list[2]         // 3
 list[-1]        // 3

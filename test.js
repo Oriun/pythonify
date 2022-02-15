@@ -43,3 +43,6 @@ len(a_map)      // 5
 len([0,3,4])    // 3
 
 const listFromIterable = List(a_map) // [[1, 2], [3, 4], ['ok', 'bye'], ['why', 'you'], ['did', 'this']]
+
+// list.append(Symbol.for('ot'))
+console.log(Symbol.for('ot') in list)
