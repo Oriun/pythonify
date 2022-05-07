@@ -5,7 +5,7 @@ Some Python syntax in JS
 ```javascript
 import { range, List, len } from './len.js'
 
-for (let i of range(4))
+for (i in range(4))
     console.log("Index", i)
 /*
  * Prints :
