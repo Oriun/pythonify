@@ -1,5 +1,3 @@
-**Forgive me**
-
 # Pythonify
 
 Some Python syntax in JS
