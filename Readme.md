@@ -1,6 +1,6 @@
 # Pythonify
 
-Some Python syntax in JS
+Some Python-like syntax in JS
 
 ```javascript
 import { range, List, len } from './len.js'
